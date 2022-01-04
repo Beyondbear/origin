@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>起步</title>
+    <script>
+        var i=0;
+        window.onload=()=>{
+            setInterval(()=>{
+                let imgs=['img/l1.jpeg','img/l2.jpeg','img/l3.jpeg']
+                document.querySelector('#img').src=imgs[i++]
+                if(i>2)i=0;
+            },2000);
+        }
+        Clc1=function (flag){
+            let x=document.getElementsByName('num1');
+            switch(flag){
+                case '+':
+                    x[1].value++
+                    break;
+                case '-':
+                    x[1].value--
+            }
+            if(x[1].value==0){
+                x[0].disabled=true;
+            }
+            else{
+                x[0].disabled=false;
+            }
+        }
+        Clc2=function (flag){
+            let x=document.getElementsByName('num2');
+            switch(flag){
+                case '+':
+                    x[1].value++
+                    break;
+                case '-':
+                    x[1].value--
+            }
+            if(x[1].value==0){
+                x[0].disabled=true;
+            }
+            else{
+                x[0].disabled=false;
+            }
+        }
+        Clc3=function (flag){
+            let x=document.getElementsByName('num3');
+            switch(flag){
+                case '+':
+                    x[1].value++
+                    break;
+                case '-':
+                    x[1].value--
+            }
+            if(x[1].value==0){
+                x[0].disabled=true;
+            }
+            else{
+                x[0].disabled=false;
+            }
+        }
+        Clc4=function (flag){
+            let x=document.getElementsByName('num4');
+            switch(flag){
+                case '+':
+                    x[1].value++
+                    break;
+                case '-':
+                    x[1].value--
+            }
+            if(x[1].value==0){
+                x[0].disabled=true;
+            }
+            else{
+                x[0].disabled=false;
+            }
+        }
+        charge=()=>{
+            if(document.getElementsByName('num1')[1].value!==0)document.getElementsByName('num1')[0].disabled=false;
+            if(document.getElementsByName('num2')[1].value!==0)document.getElementsByName('num2')[0].disabled=false;
+            if(document.getElementsByName('num3')[1].value!==0)document.getElementsByName('num3')[0].disabled=false;
+            if(document.getElementsByName('num4')[1].value!==0)document.getElementsByName('num4')[0].disabled=false;
+            if(document.getElementsByName('num1')[1].value==0)document.getElementsByName('num1')[0].disabled=true;
+            if(document.getElementsByName('num2')[1].value==0)document.getElementsByName('num2')[0].disabled=true;
+            if(document.getElementsByName('num3')[1].value==0)document.getElementsByName('num3')[0].disabled=true;
+            if(document.getElementsByName('num4')[1].value==0)document.getElementsByName('num4')[0].disabled=true;
+
+        }
+    </script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header>img{
+            position: fixed;
+            display: flex;
+            border: 1px solid;
+            width: 100vw;
+            height: 12vh;
+        }
+        nav{
+            background-color:rgb(202, 202, 111);
+            display: flex;
+            position: fixed;
+            top: 12vh;
+            width:100vw;
+            height: 10vh;
+            border: 1px solid;
+        }
+        nav .s{
+            margin-right: auto;
+            height: 10vh;
+            width: 30vw;
+            text-align: center;
+        }
+        nav .t{
+            width: 30vw;
+            height: 10vh;
+            text-align: center;
+        }
+        .zt{
+            display: flex;
+            background: url(img/b1.jpeg);
+            position: fixed;
+            top:22vh;
+            width: 100vw;
+            height: 70vh;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        .zt .fl{
+            background-color: blueviolet;
+            width: 42vw;
+            height: 65vw;
+            margin: 4vw;
+        }
+        .fl img{
+            width: 42vw;
+            height: 50vw;
+        }
+        .fl button{
+            height: 10vw;
+            width: 10vw;
+            margin: 1.5vw;
+            padding: 0;
+            border: 1px solid;
+            font-size: 8vw;
+            
+        }
+        .fl input{
+            height: 8vw;
+            width: 12vw;
+            margin: 1.2vw;
+            padding: 0;
+            border: 1px solid;
+            justify-content: center;
+
+        }
+        footer{
+            position: fixed;
+            top:92vh;
+            height: 8vh;
+            width: 100vw;
+            text-align: center;
+        }
+        span{
+            color:brown;
+            font-size: 4vh;
+            font-weight: bolder;
+        }
+        input{
+            text-align: center;
+            font-size: 2vh;
+        }
+        footer{
+            font-size: 10vw;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/l1.jpeg" alt="" id="img">
+    </header>
+    <nav>
+        <a href="" class='s'><span>首页</span></a>
+        <a href="" class='t'><span>购物车</span></a>
+        <a href="" class='t'><span>个人</span></a>
+    </nav>
+    <div class='zt'>
+        <div class="fl"><img src="img/a.jpeg" alt=""><button name="num1" onclick="Clc1('-')" disabled>-</button><input type="text" name="num1" placeholder="0" onchange="charge()"><button name="num1" onclick="Clc1('+')">+</button></div>
+        <div class="fl"><img src="img/b.jpeg" alt=""><button name="num2" onclick="Clc2('-')" disabled>-</button><input type="text" name="num2" placeholder="0" onchange="charge()"><button name="num2" onclick="Clc2('+')">+</button></div>
+        <div class="fl"><img src="img/c.jpeg" alt=""><button name="num3" onclick="Clc3('-')" disabled>-</button><input type="text" name="num3" placeholder="0" onchange="charge()"><button name="num3" onclick="Clc3('+')">+</button></div>
+        <div class="fl"><img src="img/d.jpeg" alt=""><button name="num4" onclick="Clc4('-')" disabled>-</button><input type="text" name="num4" placeholder="0" onchange="charge()"><button name="num4" onclick="Clc4('+')">+</button></div>
+    </div>
+    <footer>
+        起步
+</footer>
+</body>
+</html>
