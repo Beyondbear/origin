@@ -7,6 +7,9 @@
     <title>起步</title>
     <script>
         var i=0;
+        window.addEventListener(Storage,(event)=>{
+            console.log(event)
+        })
         window.onload=()=>{
             setInterval(()=>{
                 let imgs=['img/l1.jpeg','img/l2.jpeg','img/l3.jpeg']
@@ -23,6 +26,7 @@
                 case '-':
                     x[1].value--
             }
+            let n=x[1].value;
             if(x[1].value==0){
                 x[0].disabled=true;
             }
@@ -89,6 +93,28 @@
             if(document.getElementsByName('num4')[1].value==0)document.getElementsByName('num4')[0].disabled=true;
 
         }
+        chargeP1=()=>{
+            localStorage.clear()
+            let data=document.getElementsByName('num1')[1].value;
+            localStorage.setItem('num1',`${data}`)
+        }
+        chargeP2=()=>{
+            localStorage.clear()
+            let data=document.getElementsByName('num2')[1].value;
+            localStorage.setItem('num2',`${data}`)
+        }
+        chargeP3=()=>{
+            localStorage.clear()
+            let data=document.getElementsByName('num3')[1].value;
+            localStorage.setItem('num3',`${data}`)
+        }
+        chargeP4=()=>{
+            localStorage.clear()
+            let data=document.getElementsByName('num4')[1].value;
+            localStorage.setItem('num4',`${data}`)
+        }
+
+
     </script>
     <style>
         body{
@@ -191,15 +217,15 @@
         <img src="img/l1.jpeg" alt="" id="img">
     </header>
     <nav>
-        <a href="" class='s'><span>首页</span></a>
-        <a href="" class='t'><span>购物车</span></a>
+        <a href="file:///D:/learning/origin/sy.html" class='s'><span>首页</span></a>
+        <a href="file:///D:/learning/origin/gwc.html" class='t'><span>购物车</span></a>
         <a href="" class='t'><span>个人</span></a>
     </nav>
     <div class='zt'>
-        <div class="fl"><img src="img/a.jpeg" alt=""><button name="num1" onclick="Clc1('-')" disabled>-</button><input type="text" name="num1" placeholder="0" onchange="charge()"><button name="num1" onclick="Clc1('+')">+</button></div>
-        <div class="fl"><img src="img/b.jpeg" alt=""><button name="num2" onclick="Clc2('-')" disabled>-</button><input type="text" name="num2" placeholder="0" onchange="charge()"><button name="num2" onclick="Clc2('+')">+</button></div>
-        <div class="fl"><img src="img/c.jpeg" alt=""><button name="num3" onclick="Clc3('-')" disabled>-</button><input type="text" name="num3" placeholder="0" onchange="charge()"><button name="num3" onclick="Clc3('+')">+</button></div>
-        <div class="fl"><img src="img/d.jpeg" alt=""><button name="num4" onclick="Clc4('-')" disabled>-</button><input type="text" name="num4" placeholder="0" onchange="charge()"><button name="num4" onclick="Clc4('+')">+</button></div>
+        <div class="fl"><img src="img/a.jpeg" alt=""><button name="num1" onclick="Clc1('-');chargeP1()" disabled>-</button><input type="text" name="num1" placeholder="0" onchange="charge();chargeP1()"><button name="num1" onclick="Clc1('+');chargeP1()">+</button></div>
+        <div class="fl"><img src="img/b.jpeg" alt=""><button name="num2" onclick="Clc2('-');chargeP2()" disabled>-</button><input type="text" name="num2" placeholder="0" onchange="charge();chargeP2()"><button name="num2" onclick="Clc2('+');chargeP2()">+</button></div>
+        <div class="fl"><img src="img/c.jpeg" alt=""><button name="num3" onclick="Clc3('-');chargeP3()" disabled>-</button><input type="text" name="num3" placeholder="0" onchange="charge();chargeP3()"><button name="num3" onclick="Clc3('+');chargeP3()">+</button></div>
+        <div class="fl"><img src="img/d.jpeg" alt=""><button name="num4" onclick="Clc4('-');chargeP4()" disabled>-</button><input type="text" name="num4" placeholder="0" onchange="charge();chargeP4()"><button name="num4" onclick="Clc4('+');chargeP4()">+</button></div>
     </div>
     <footer>
         起步

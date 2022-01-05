@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <script>
+        // var i=0;
+        // var ida=0;
+        // var idb=0;
+        // var idc=0;
+        // var idd=0;
+        // window.addEventListener('Storage',(event)=>{
+        //     console.log(event)
+        //     if(event.key=='num1'){
+        //         ida=event.newValue;
+        //         if(ida!==0){
+        //             document.getElementById('tb').innerHTML=`<th>购物车</th>`
+        //             let td1=document.createElement('td');
+        //             let td2=document.createElement('td');
+        //             let td3=document.createElement('td');
+        //             let td4=document.createElement('td');
+        //             let img1=document.createElement('img');
+        //             let inp=document.createElement('input');
+        //             let bt1=document.createElement('button');
+        //             let bt2=document.createElement('button');
+        //             td1.appendChild(img1);
+        //             img1.src='img/a.jpeg';
+        //             td2.appendChild(inp);
+        //             inp.innerHTML=ida;
+        //             td3.appendChild(bt1);
+        //             bt1.innerHTML='-';
+        //             td4.appendChild(bt2);
+        //             bt2.innerHTML='+';
+        //             document.getElementById('tb').appendChild(td1)
+        //             document.getElementById('tb').appendChild(td2)
+        //             document.getElementById('tb').appendChild(td3)
+        //             document.getElementById('tb').appendChild(td4)
+        //         }
+        //     }else if(event.key=='num2'){
+        //         idb=event.newValue;
+        //         if(idb!==0){
+        //             document.getElementById('tb').innerHTML=`<th>购物车</th>`
+        //             let td1=document.createElement('td');
+        //             let td2=document.createElement('td');
+        //             let td3=document.createElement('td');
+        //             let td4=document.createElement('td');
+        //             let img1=document.createElement('img');
+        //             let inp=document.createElement('input');
+        //             let bt1=document.createElement('button');
+        //             let bt2=document.createElement('button');
+        //             td1.appendChild(img1);
+        //             img1.src='img/b.jpeg';
+        //             td2.appendChild(inp);
+        //             inp.innerHTML=idb;
+        //             td3.appendChild(bt1);
+        //             bt1.innerHTML='-';
+        //             td4.appendChild(bt2);
+        //             bt2.innerHTML='+';
+        //             document.getElementById('tb').appendChild(td1)
+        //             document.getElementById('tb').appendChild(td2)
+        //             document.getElementById('tb').appendChild(td3)
+        //             document.getElementById('tb').appendChild(td4)
+
+        //         }
+        //     }else if(event.key=='num3'){
+        //         idc=event.newValue;
+        //         if(idc!==0){
+        //             document.getElementById('tb').innerHTML=`<th>购物车</th>`
+        //             let td1=document.createElement('td');
+        //             let td2=document.createElement('td');
+        //             let td3=document.createElement('td');
+        //             let td4=document.createElement('td');
+        //             let img1=document.createElement('img');
+        //             let inp=document.createElement('input');
+        //             let bt1=document.createElement('button');
+        //             let bt2=document.createElement('button');
+        //             td1.appendChild(img1);
+        //             img1.src='img/c.jpeg';
+        //             td2.appendChild(inp);
+        //             inp.innerHTML=idc;
+        //             td3.appendChild(bt1);
+        //             bt1.innerHTML='-';
+        //             td4.appendChild(bt2);
+        //             bt2.innerHTML='+';
+        //             document.getElementById('tb').appendChild(td1)
+        //             document.getElementById('tb').appendChild(td2)
+        //             document.getElementById('tb').appendChild(td3)
+        //             document.getElementById('tb').appendChild(td4)
+
+        //         }
+        //     }else if(event.key=='num4'){
+        //         idd=event.newValue;
+        //         if(idd!==0){
+        //             document.getElementById('tb').innerHTML=`<th>购物车</th>`
+        //             let td1=document.createElement('td');
+        //             let td2=document.createElement('td');
+        //             let td3=document.createElement('td');
+        //             let td4=document.createElement('td');
+        //             let img1=document.createElement('img');
+        //             let inp=document.createElement('input');
+        //             let bt1=document.createElement('button');
+        //             let bt2=document.createElement('button');
+        //             td1.appendChild(img1);
+        //             img1.src='img/d.jpeg';
+        //             td2.appendChild(inp);
+        //             inp.innerHTML=idd;
+        //             td3.appendChild(bt1);
+        //             bt1.innerHTML='-';
+        //             td4.appendChild(bt2);
+        //             bt2.innerHTML='+';
+        //             document.getElementById('tb').appendChild(td1)
+        //             document.getElementById('tb').appendChild(td2)
+        //             document.getElementById('tb').appendChild(td3)
+        //             document.getElementById('tb').appendChild(td4)
+        //         }
+        //     }
+        // })
+        window.onload=()=>{
+            setInterval(()=>{
+                let imgs=['img/l1.jpeg','img/l2.jpeg','img/l3.jpeg']
+                document.querySelector('#img').src=imgs[i++]
+                if(i>2)i=0;
+            },2000);
+        }
+        
+        
+        </script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header>img{
+            position: fixed;
+            display: flex;
+            border: 1px solid;
+            width: 100vw;
+            height: 12vh;
+        }
+        nav{
+            background-color:rgb(202, 202, 111);
+            display: flex;
+            position: fixed;
+            top: 12vh;
+            width:100vw;
+            height: 10vh;
+            border: 1px solid;
+        }
+        nav .s{
+            margin-right: auto;
+            height: 10vh;
+            width: 30vw;
+            text-align: center;
+        }
+        nav .t{
+            width: 30vw;
+            height: 10vh;
+            text-align: center;
+        }
+        .zt{
+            display: flex;
+            background: url(img/b1.jpeg);
+            position: fixed;
+            top:22vh;
+            width: 100vw;
+            height: 80vh;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        .zt .fl{
+            background-color: blueviolet;
+            width: 42vw;
+            height: 65vw;
+            margin: 4vw;
+        }
+        .fl img{
+            width: 42vw;
+            height: 50vw;
+        }
+        .fl button{
+            height: 10vw;
+            width: 10vw;
+            margin: 1.5vw;
+            padding: 0;
+            border: 1px solid;
+            font-size: 8vw;
+            
+        }
+        .fl input{
+            height: 8vw;
+            width: 12vw;
+            margin: 1.2vw;
+            padding: 0;
+            border: 1px solid;
+            justify-content: center;
+
+        }
+        span{
+            color:brown;
+            font-size: 4vh;
+            font-weight: bolder;
+        }
+        input{
+            text-align: center;
+            font-size: 2vh;
+        }
+        footer{
+            font-size: 10vw;
+            font-weight: bolder;
+        }
+        #gwl table{
+            position: fixed;
+            top: 22vh;
+            width: 100vw;
+            height: 60vh;
+
+        }
+        td{
+            position: relative;
+            top:-20vh;
+            height: 3vh;
+            width: 20vw;
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+        td img{
+            width: 20vw;
+            height: 8vh;
+        }
+        td button{
+            font-weight: bolder;
+            height: 4vh;
+            width: 8vw;
+        }
+        #gwl th{
+            background-color:rgb(211, 116, 116);
+            color: burlywood;
+            position: fixed;
+            top: 22vh;
+            height:5vh ;
+            width: 100vw;
+            font-weight: bolder;
+            text-align: center;
+            font-size: 8vw;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/l1.jpeg" alt="" id="img">
+    </header>
+    <nav>
+        <a href="" class='s'><span>首页</span></a>
+        <a href="" class='t'><span>购物车</span></a>
+        <a href="" class='t'><span>个人</span></a>
+    </nav>
+    <div class='zt'>
+        <div id='gwl'>
+            <table id='tb'>
+                <th>购物栏</th>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
