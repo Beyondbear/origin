@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            let myDisplay=document.getElementById('display');
+            myDisplay.innerHTML=arraySum([1,2,3])+"<br>";
+            myDisplay.innerHTML+=objectSum({z:4,y:5,x:6});
+            function arraySum([x,y,z]){
+                return x+y+z;
+            }
+            function objectSum({x,y,z}){
+                return x+y+z;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="display"></div>
+    
+</body>
+</html>

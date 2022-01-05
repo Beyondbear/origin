@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数游戏</title>
+    <script>
+        function start(){
+            document.getElementById('start').disabled=true;
+            document.getElementById('sub').disabled=false;
+            document.getElementById('res').innerHTML=null;
+            document.getElementById('n').innerHTML=10;
+            function rad(min,max) {
+                return Math.floor(Math.random() * (max - min)) + min }
+        }
+        function sub(){
+            if(document.getElementById('n').innerHTML==0){
+                document.getElementById('start').disabled=false;
+                document.getElementById('sub').disabled=true;
+            }
+            else{
+                document.getElementById('n').innerHTML-=1;
+            }
+            var a=start.rad(0,99);
+            var t=a;
+            var b=document.getElementById('num').value;
+            if(b==t){
+                console.log('恭喜你猜对了');
+                document.getElementById('start').disabled=false;
+                document.getElementById('sub').disabled=true;
+            }
+            else{
+                console.log('猜错了请重新再猜');
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="a">
+        <h2>猜数游戏</h2>
+        <p><i>请输入一个0-99之间的随机整数:</i></p>
+        <p><input type="text" id="num"><button onclick="sub()" id="sub" disabled>提交</button><button onclick="start()" id="start">开始</button></p>
+        <p>结果:<input type="text" id="res" disabled></p>
+        <p>当前还有次数:<input type="text" id="n" disabled></p>
+    </div>
+</body>
+</html>
+<style>
+    h2{
+        text-align: center;
+        font: 50px large;
+    }
+    .a{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+</style>

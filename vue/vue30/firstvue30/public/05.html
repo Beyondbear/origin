@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            let myDisplay=document.getElementById('display');
+            let show1=function(a){
+                return a*2;
+            }
+            myDisplay.innerHTML="普通函数返回值:"+show1(8)+"<br>";
+            let show2=(a) => {return a*3;
+                
+            }
+            myDisplay.innerHTML+="普通函数返回值:"+show2(8)+"<br>";
+            let show3=a=>a*3;
+            myDisplay.innerHTML+="普通函数返回值:"+show3(8)+"<br>";
+        }
+    </script>
+</head>
+<body>
+    <div id="display"></div>
+</body>
+</html>

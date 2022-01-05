@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            const map=new Map();
+            map.set('name','刘兵');
+            map.set('age','25');
+            const myDisplay=document.getElementById('display');
+            for(let [key,value] of map){
+                myDisplay.innerHTML+="键名:"+key+",";
+                myDisplay.innerHTML+="键值:"+value+"<br>";
+            }
+            //如果只想获取键名，或者只想获取键值，可以写成下面这样
+            myDisplay.innerHTML+="<br><br>所有键名包括:<br>"
+            //获取键名并显示所有键名
+            for(let [key] of map){
+                myDisplay.innerHTML+=key+','
+            }
+            myDisplay.innerHTML+="<br><br>所有键值包括:<br>"
+            for(let [,value] of map){
+                myDisplay.innerHTML+=value+','
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="display"></div>
+</body>
+</html>

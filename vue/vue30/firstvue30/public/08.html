@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arrJson=[
+            {language:'web',price:54},
+            {language:'C++',price:87},
+            {language:'json',price:63},
+            {language:'ES6',price:99}
+    ];
+    let arrResult=arrJson.filter(item=>item.price>=65);
+    for(let key in arrResult){
+        console.log(key+"语言:"+arrResult[key].language+"价格"+arrResult[key].price);
+    }
+    console.log(arrResult);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

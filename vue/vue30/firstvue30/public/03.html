@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            let jsonData={
+                name:'刘兵',
+                age:25,
+                like:['羽毛球','足球']
+            };
+            //对json数据进行解构
+            let {name,age,like:mylike}=jsonData;
+            let myDisplay=document.getElementById('display');
+            myDisplay.innerHTML="姓名:"+name+'<br>';
+            myDisplay.innerHTML+="年龄:"+age+'<br>';
+            myDisplay.innerHTML+="爱好:";
+            for(let i=0;i<mylike.length;i++){
+                myDisplay.innerHTML+=mylike[i]+"&nbsp";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="display"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var myVar=document.getElementById('varCount');
+            var myLet=document.getElementById('letCount');
+            for(var i=0;i<10;i++){
+                setTimeout(function(){
+                    myVar.innerHTML+=i+'&nbsp;';
+                })
+            }
+            for(let i=0;i<10;i++){
+                setTimeout(function(){
+                    myLet.innerHTML+=i+'&nbsp;';
+                })
+            }
+        }
+                    /*首先这样的结果需要从JS的执行机制说起。JS是单线程环境，
+            也就是说代码的执行是从上到下，依次执行。这样的执行称为同步执行。
+            因为种种不要浪费和节约的原因。JS中引进了异步的机制。在这段代码中，
+            哪个是同步哪个是异步呢？for循环是同步代码，而setTimeout中的是异步代码。
+            那么JS碰到这个有同步和异步的情况下会先从上到下执行同步代码，碰到异步的代码会将其插入到任务队列当中等待。
+            而setTimeout是延时，也就是说碰到setTimeout这个异步的代码块会根据它里面的第二个参数：延时时间来将代码插入到任务队列当中，
+            比如上面这段代码中，第二个参数延时时间是0，也就是说执行到它的时候会在0ms之后将它插入到任务队列当中。同步代码都执行完成之后，
+            那么JS引擎就空闲了，这个时候就轮到任务队列中的异步代码依次加载了。
+            这是上面这段代码的答案的一半。另一半就来自于作用域，作用域是变量等资源的作用范围。在这段代码中准确的说是作用域链的问题，
+            当同步代码执行完毕开始执行异步的setTimeout代码时，
+            setTimeout中需要一个变量 ---i---,而执行的时候在当前的作用域中开始找，
+            找不到变量i的定义，这个时候就把创建这个函数的作用域作为当前作用域，
+            再次寻找，创建这个函数的作用域就是全局作用域，也就是找到了for循环中i，
+            找到了之后就结束寻找变量i的行程。由于这个时候的i是全局的，
+            而且人家已经变为了最终形态：10，setTimeout找到的就是这个i=10；所以就输出了10，下面的9次setTimeout 的执行都是类似，所以结果都是10；*/
+    </script>
+</head>
+<body>
+    <div id="varCount">var变量循环:</div>
+    <div id="letCount">let变量循环:</div>
+</body>
+</html>

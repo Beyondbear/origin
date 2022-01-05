@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const str='jshdjsihh';
+        const obj=str.split('').reduce((pre,item)=>{
+            pre[item]?pre[item]++:pre[item]=1;//空对象中该键是否存在不存在则赋值为1，存在则自加1
+            return pre;
+        },{})
+        console.log(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

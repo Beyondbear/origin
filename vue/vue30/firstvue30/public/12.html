@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let myJson={'name':'刘兵','age':18};
+        for(let key in myJson){
+            document.write(`${key}:${myJson[key]} <br>`)
+        }
+        let myJson1=[{'name':'a','age':12},{'name':'b','age':18},{'name':'c','age':10}]
+        for(let i=0;i<myJson1.length;i++){
+            for(let j in myJson1[i]){
+                document.write(`${j}:${myJson1[i][j]} <br>`)
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
